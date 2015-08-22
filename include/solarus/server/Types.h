@@ -1,6 +1,9 @@
 #ifndef TYPES_H
 #define TYPES_H
 
+#define SERVER_PORT 15000
+#define MAXPENDING 4
+
 #include <unistd.h> 
 #include <sys/types.h> 
 #include <sys/socket.h> 

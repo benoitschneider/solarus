@@ -6,7 +6,7 @@
 
 class Server {
 	public:
-		Server(int port,int maxpending);
+		Server(unsigned short int port,unsigned short int maxpending);
 		~Server();
 		bool Connect();
 		void Run();

@@ -1,6 +1,6 @@
 #include "solarus/server/Server.h"
 
-Server::Server(int port,int maxpending) {
+Server::Server(unsigned short int port,unsigned short int maxpending) {
 	this->srv_d->port = port;
 	this->srv_d->maxpending = maxpending;
 	this->srv_d->ready = this->Connect();
@@ -44,7 +44,10 @@ void Server::Run() {
 			if ((cl_d.socket = accept(this->srv_d->socket, (struct sockaddr *) &cl_d.client_addr, &clientlen)) < 0) {
 				break;		
 			}else{
-				ClientHandler ch = ClientHandler(&cl_d);
+				int pid_c;
+				if ((pid_c=fork())==0) {
+					ClientHandler ch = ClientHandler(&cl_d);
+				}
 			}
 		}
 	}

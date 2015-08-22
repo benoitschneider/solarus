@@ -3,6 +3,8 @@
 ClientHandler::ClientHandler(client_data* c){
 	this->cl_d.client_addr = c->client_addr;
 	this->cl_d.socket = c->socket;
+
+	this->Handle();
 }
 
 void ClientHandler::Handle(){
