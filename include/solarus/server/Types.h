@@ -1,3 +1,6 @@
+#ifndef TYPES_H
+#define TYPES_H
+
 typedef struct server_data {
         struct sockaddr_in server_addr;
         int port;
@@ -11,3 +14,5 @@ typedef struct client_data {
         struct sockaddr_in client_addr;
         int socket;
 } client_data;
+
+#endif
