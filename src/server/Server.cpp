@@ -51,5 +51,5 @@ void Server::Run() {
 
 // TODO
 Server::~Server(){
-	close( this->srv_d->socket );
+	close(this->srv_d->socket);
 }
