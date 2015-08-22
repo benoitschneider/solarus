@@ -11,7 +11,7 @@
 
 using namespace std;
 
-typedef struct server_data{
+typedef struct server_data {
 	struct sockaddr_in server_addr;
 	int port;
 	int socket;
@@ -20,14 +20,14 @@ typedef struct server_data{
 } server_data;
 
 
-typedef struct client_data{
+typedef struct client_data {
 	struct sockaddr_in client_addr;
 	int socket;
 } client_data;
 
 
 
-class Server{
+class Server {
 	public:
 		Server(int port,int maxpending);
 		~Server();
