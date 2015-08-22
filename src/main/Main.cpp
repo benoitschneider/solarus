@@ -22,6 +22,7 @@
 #include "solarus/MainLoop.h"
 #include <iostream>
 #include <string>
+#include "solarus/server/Server.h"
 
 namespace {
 
@@ -107,6 +108,7 @@ int main(int argc, char** argv) {
   }
   else {
     // Run the main loop.
+    Server srv = Server(15000,4);
     MainLoop(args).run();
   }
 

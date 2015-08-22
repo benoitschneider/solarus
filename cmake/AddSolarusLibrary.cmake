@@ -163,6 +163,8 @@ file(
   include/solarus/third_party/snes_spc/SPC_Filter.h
   include/solarus/third_party/snes_spc/spc.h
 
+  include/solarus/server/Server.h
+
   include/solarus/Ability.h
   include/solarus/AbilityInfo.h
   include/solarus/Arguments.h
@@ -355,6 +357,8 @@ file(
   src/movements/RelativeMovement.cpp
   src/movements/StraightMovement.cpp
   src/movements/TargetMovement.cpp
+
+  src/server/Server.cpp
 
   src/AbilityInfo.cpp
   src/Arguments.cpp
