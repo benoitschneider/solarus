@@ -1,6 +1,14 @@
 #ifndef TYPES_H
 #define TYPES_H
 
+#include <unistd.h> 
+#include <sys/types.h> 
+#include <sys/socket.h> 
+#include <netinet/in.h> 
+#include <arpa/inet.h> 
+#include <string.h> 
+#include <iostream>
+
 typedef struct server_data {
         struct sockaddr_in server_addr;
         int port;
@@ -15,4 +23,5 @@ typedef struct client_data {
         int socket;
 } client_data;
 
+using namespace std;
 #endif

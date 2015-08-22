@@ -150,6 +150,9 @@ file(
   include/solarus/movements/StraightMovement.h
   include/solarus/movements/TargetMovement.h
 
+  include/solarus/server/Server.h
+  include/solarus/server/ClientHandler.h
+
   include/solarus/third_party/hqx/common.h
   include/solarus/third_party/hqx/hqx.h
   include/solarus/third_party/snes_spc/blargg_common.h
@@ -162,8 +165,6 @@ file(
   include/solarus/third_party/snes_spc/SPC_DSP.h
   include/solarus/third_party/snes_spc/SPC_Filter.h
   include/solarus/third_party/snes_spc/spc.h
-
-  include/solarus/server/Server.h
 
   include/solarus/Ability.h
   include/solarus/AbilityInfo.h
@@ -359,6 +360,7 @@ file(
   src/movements/TargetMovement.cpp
 
   src/server/Server.cpp
+  src/server/ClientHandler.cpp
 
   src/AbilityInfo.cpp
   src/Arguments.cpp

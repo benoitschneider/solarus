@@ -40,10 +40,11 @@ void Server::Run() {
 		cout << "Server running in child process " << getpid() << endl;
 		while (this->srv_d->ready) {
 			unsigned int clientlen = sizeof(cl_d.client_addr);
-			
 			// Wait for client connection
 			if ((cl_d.socket = accept(this->srv_d->socket, (struct sockaddr *) &cl_d.client_addr, &clientlen)) < 0) {
 				break;		
+			}else{
+				ClientHandler ch = ClientHandler(&cl_d);
 			}
 		}
 	}
