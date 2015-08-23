@@ -1,7 +1,7 @@
 #ifndef TYPES_H
 #define TYPES_H
 
-#define SERVER_PORT 15000
+#define SERVER_PORT 14000
 #define MAXPENDING 4
 
 #include <unistd.h> 
