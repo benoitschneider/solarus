@@ -109,11 +109,18 @@ int main(int argc, char** argv) {
   }
   else {
     // Run the main loop.
+    int pid = getpid();
     Server srv = Server(SERVER_PORT,MAXPENDING);
-    Client* cli;
-    cli = new Client();
-    cli->Connect((char*)"127.0.0.1",SERVER_PORT);
-    MainLoop(args).run();
+    
+    if (getpid() == pid){
+      Client* cli;
+      cli = new Client();
+      cli->Connect((char*)"127.0.0.1",SERVER_PORT);
+    }
+
+    if (getpid() == pid) {
+      MainLoop(args).run();
+    }
   }
 
   return 0;
