@@ -34,22 +34,26 @@ bool Server::Connect() {
 }
 
 void Server::Run() {
-	client_data cl_d;
-	int pid;
-	if ((pid = fork()) == 0) {
-		cout << "Server running in child process " << getpid() << endl;
-		while (this->srv_d->ready) {
-			unsigned int clientlen = sizeof(cl_d.client_addr);
-			// Wait for client connection
-			if ((cl_d.socket = accept(this->srv_d->socket, (struct sockaddr *) &cl_d.client_addr, &clientlen)) < 0) {
-				break;		
-			}else{
-				int pid_c;
-				if ((pid_c=fork())==0) {
-					ClientHandler ch = ClientHandler(&cl_d);
+	if (this->srv_d->ready){
+		client_data cl_d;
+		int pid;
+		if ((pid = fork()) == 0) {
+			cout << "Server running in child process " << getpid() << endl;
+			while (this->srv_d->ready) {
+				unsigned int clientlen = sizeof(cl_d.client_addr);
+				// Wait for client connection
+				if ((cl_d.socket = accept(this->srv_d->socket, (struct sockaddr *) &cl_d.client_addr, &clientlen)) < 0) {
+					break;		
+				}else{
+					int pid_c;
+					if ((pid_c=fork())==0) {
+						ClientHandler ch = ClientHandler(&cl_d);
+					}
 				}
 			}
 		}
+	}else{
+		cout << "Server not connected" << endl;
 	}
 }
 
