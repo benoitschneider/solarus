@@ -23,6 +23,7 @@
 #include <iostream>
 #include <string>
 #include "solarus/server/Server.h"
+#include "solarus/server/Client.h"
 
 namespace {
 
@@ -108,7 +109,10 @@ int main(int argc, char** argv) {
   }
   else {
     // Run the main loop.
-    Server srv = Server(15000,4);
+    Server srv = Server(SERVER_PORT,MAXPENDING);
+    Client* cli;
+    cli = new Client();
+    cli->Connect((char*)"127.0.0.1",SERVER_PORT);
     MainLoop(args).run();
   }
 

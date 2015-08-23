@@ -152,7 +152,8 @@ file(
 
   include/solarus/server/Server.h
   include/solarus/server/ClientHandler.h
-
+  include/solarus/server/Client.h
+ 
   include/solarus/third_party/hqx/common.h
   include/solarus/third_party/hqx/hqx.h
   include/solarus/third_party/snes_spc/blargg_common.h
@@ -361,6 +362,7 @@ file(
 
   src/server/Server.cpp
   src/server/ClientHandler.cpp
+  src/server/Client.cpp
 
   src/AbilityInfo.cpp
   src/Arguments.cpp
