@@ -150,7 +150,6 @@ file(
   include/solarus/movements/StraightMovement.h
   include/solarus/movements/TargetMovement.h
 
-  include/solarus/server/Server.h
   include/solarus/server/ClientHandler.h
   include/solarus/server/Client.h
  
@@ -360,7 +359,6 @@ file(
   src/movements/StraightMovement.cpp
   src/movements/TargetMovement.cpp
 
-  src/server/Server.cpp
   src/server/ClientHandler.cpp
   src/server/Client.cpp
 

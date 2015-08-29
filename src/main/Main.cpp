@@ -22,7 +22,6 @@
 #include "solarus/MainLoop.h"
 #include <iostream>
 #include <string>
-#include "solarus/server/Server.h"
 #include "solarus/server/Client.h"
 
 namespace {
@@ -110,13 +109,10 @@ int main(int argc, char** argv) {
   else {
     // Run the main loop.
     int pid = getpid();
-    Server srv = Server(SERVER_PORT,MAXPENDING);
     
-    if (getpid() == pid){
-      Client* cli;
-      cli = new Client();
-      cli->Connect((char*)"127.0.0.1",SERVER_PORT);
-    }
+    Client* cli;
+    cli = new Client();
+    cli->Connect((char*)"127.0.0.1",SERVER_PORT);
 
     if (getpid() == pid) {
       MainLoop(args).run();
